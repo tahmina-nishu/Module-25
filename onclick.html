@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom events</title>
+</head>
+<body>
+
+    <section id="add_event">
+        <h3>Button e onclick event add korar way 3 ta</h3>
+        <ul>
+            <li>1. onclick = "console.log('text set kore')" </li>
+            <li>2. onclick = "alada function create kore function ta call kore"</li>
+            <li>3. Alada variable e rekhe sekhane function name diye dibo, function k call korbo na</li>
+            <li>4. Alada variable e rekhe sekhane function create kore</li>
+        </ul>
+    </section>
+
+    <!-- First option -->
+
+        <button onclick="console.log(5)">Click Me <br> & <br> print 5</button>    <!-- click korle console e 5 print korbe -->
+
+        <button onclick="console.log('string')">Click Me <br> & <br> print string</button>    <!-- etar khetre string likhle single qoute e likhte hobe -->
+
+        <button onclick="document.body.style.backgroundColor ='skyblue'">Click Me <br> & <br> make skyBlue</button>    <!-- click korle background sky blue hobe -->
+    
+    <!-- Second option -->
+        <script>
+            function makeGreen()
+            {
+                document.body.style.backgroundColor = "green";
+            }
+        </script>
+        <button onclick="makeGreen()">Click Me <br> & <br> make green</button>    <!-- click korle background green hobe -->
+
+    <!-- Third option -->
+        
+        <button id="btn">Click Me <br> & <br> make RosyBrown</button>    <!-- click korle background RosyBrown hobe -->
+        <script>
+            function makeRosyBrown()
+            {
+                document.body.style.backgroundColor = "RosyBrown";
+            }
+
+            const RosyBrownButton = document.getElementById('btn');
+            RosyBrownButton.onclick = makeRosyBrown;
+        </script>
+
+    <!-- Fourth option -->
+        
+        <button id="btn2">Click Me <br> & <br> make Maroon</button>    <!-- click korle background Maroon hobe -->
+        <script>
+            const MaroonButton = document.getElementById('btn2');
+            MaroonButton.onclick = function makeMaroon()
+            {
+                document.body.style.backgroundColor = "Maroon";
+            }
+        </script>
+
+    <script src="js/event.js"></script>
+</body>
+</html>
