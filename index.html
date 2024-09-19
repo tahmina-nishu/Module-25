@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <section id="add_event">
+    <section class="add_event">
         <h3>Button e onclick event add korar way 3 ta</h3>
         <ul>
             <li>1. onclick = "console.log('text set kore')" </li>
@@ -57,6 +57,43 @@
                 document.body.style.backgroundColor = "Maroon";
             }
         </script>
+
+<section class="add_event">
+    <!-- ** add event listener ** -->
+    <h3>Event Listener : </h3>
+    <p><span>'onclick'</span> use korle sudhumatro click korle event kaj korbe r <span>'addEventListener'</span> diye j kono event add kora jay.</p>
+    <p>er jonno ekta variable e rekhe <span>"variable.addEventListener('event type', function name)"</span> syntax use korte hobe.</p>
+</section>
+    <button id="LightCoral">Click Me <br> & <br> make LightCoral</button>    <!-- click korle background LightCoral hobe -->
+    <script>
+        const LightCoralButton = document.getElementById('LightCoral');
+        LightCoralButton.addEventListener('click', makeLightCoral);
+
+        function  makeLightCoral()
+        {
+            document.body.style.backgroundColor = 'LightCoral'
+        }
+    </script>
+
+    <!-- function ta alda nankore jekhane function name dichi ekhaneo create kora jabe
+      -->
+    <button id="DarkOliveGreen">Click Me <br> & <br> make DarkOliveGreen</button>    <!-- click korle background DarkOliveGreen hobe -->
+    <script>
+        const DarkOliveGreenButton = document.getElementById('DarkOliveGreen');
+        DarkOliveGreenButton.addEventListener('click', function  makeDarkOliveGreen()
+        {
+            document.body.style.backgroundColor = 'DarkOliveGreen'
+        });
+    </script>
+
+    <!-- direct add kora jay -->
+    <button id="DarkGoldenrod">Click Me <br> & <br> make DarkGoldenrod</button>    <!-- click korle background DarkGoldenrod hobe -->
+    <script>
+        document.getElementById('DarkGoldenrod').addEventListener('click', function()
+    {
+        document.body.style.backgroundColor = 'DarkGoldenrod';
+    })
+    </script>
 
     <script src="js/event.js"></script>
 </body>

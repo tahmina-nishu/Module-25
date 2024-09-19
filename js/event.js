@@ -1,8 +1,11 @@
-const eventt = document.getElementById('add_event');
-eventt.style.backgroundColor = "lavender";
-eventt.style.borderRadius = "10px";
-eventt.style.padding = "10px";
-eventt.style.margin = "10px";
+const events = document.querySelectorAll('section');
+for(item of events)
+{
+    item.style.backgroundColor = "lavender";
+    item.style.borderRadius = "10px";
+    item.style.padding = "10px";
+    item.style.margin = "10px";
+}
 
 const butns = document.querySelectorAll('button');
 for(butn of butns)
@@ -13,4 +16,11 @@ for(butn of butns)
     butn.style.backgroundColor = "LavenderBlush";
     butn.style.border = "2px solid RosyBrown";
     butn.style.fontSize = "14px";
+}
+
+const spans = document.querySelectorAll('span');
+for(span of spans)
+{
+    span.style.fontSize = '18px';
+    span.style.color = 'Crimson';
 }
