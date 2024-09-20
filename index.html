@@ -9,10 +9,15 @@
             font-size: 16px;
             color:crimson;
         }
+        .headline{
+            background-color: rgb(12, 152, 12);
+            padding: 5px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <h2 style="background-color: rgb(12, 152, 12); padding: 5px; text-align: center;">Module : 25-1 to 25-3</h2>
+    <h2 class="headline">Module : 25-1 to 25-3</h2>
 
     <section class="add_event">
         <h3>Button e onclick event add korar way 4 ta</h3>
@@ -105,7 +110,7 @@
 
     <!-- Module: 25-4  -->
 
-    <h2 style="background-color: rgb(12, 152, 12); padding: 5px; text-align: center;">Module : 25-4</h2>
+    <h2 class="headline">Module : 25-4</h2>
     <section class="add_event">
         <h3>input field e kichu likhar por update korle <span class="red-text">Default Input text</span> er jaygay oi likha ta asbe r input field ta khali hoye jabe</h3>
         <h3>Steps -- > </h3>
@@ -135,6 +140,141 @@
             inputField.value = '';
         })
     </script>
+
+    <!-- Module: 25-5  -->
+
+    <h2 class="headline">Module : 25-5</h2>
+    <section class="add_event">
+        <h3>Create Comment Box :</h3>
+        <p>box e kichu likhe button e click korle input field er text ta upore comment hisebe add hobe & textbox ta abr blank hoye jabe</p>
+        <h3>Steps -- > </h3>
+        <ul>
+            <li>1. get the element & add 'EventListener'. <br>   <span class="highlighted">ex : document.getElementById('button-post').addEventListener('click', function(){})</span></li>
+            <li>2. store the value of textarea in a variable . <br>   <span class="highlighted">ex : const commentBox = document.getElementById('new-comment');</span></li>
+            <li>3. Set the comment text in a variable<br><span class="highlighted">ex : const newComment = commentBox.value;</span></li>
+            <li>4. Set the comment inside the comment container <br><span class="highlighted">ex : const commentContainer = document.getElementById('comment-container'); </span></li>
+            <li>5. Create a paragraph tag<br><span class="highlighted">ex : const p = document.createElement('p'); </span></li>
+            <li>6. Set the comment inside the p tag <br><span class="highlighted">ex : p.innerText = newComment; </span></li>
+            <li>7. push it <br><span class="highlighted">ex : commentContainer.appendChild(p); </span></li>
+            <li>8. Clear the comment box. <br><span class="highlighted">ex : commentBox.value = ''; </span></li>
+        </ul>
+    </section>
+
+    <div id="comment-container">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique ab dolore voluptatibus fugiat in officiis rem eaque odit incidunt, ad, repudiandae nihil deleniti quaerat ea iste ducimus. Rerum, amet obcaecati.</p>
+    </div>
+
+    <div>
+        <textarea name="" id="new-comment" cols="60" rows="5" placeholder="Add your comment"></textarea>
+        <br>
+        <button id="button-post">Post</button>
+    </div>
+
+    <script>
+        document.getElementById('button-post').addEventListener('click', function(){
+            const commentBox = document.getElementById('new-comment');
+            const newComment = commentBox.value;
+            const commentContainer = document.getElementById('comment-container');
+
+            const p = document.createElement('p');
+            p.innerText = newComment;
+            commentContainer.appendChild(p);
+
+            commentBox.value = '';
+        })
+    </script>
+    <!-- Module: 25-6  -->
+
+    <h2 class="headline">Module : 25-6</h2>
+    <section class="add_event">
+        <h3>Simple Github Like Delete Confirmation button :</h3>
+        <h3>Other events : </h3>
+        <ul>
+            <li>1. <span class="highlighted">'mouseenter' -- ></span> mouse enter korle event kaj korbe</li>
+            <li>2. <span class="highlighted">'mousemove' -- ></span> mouse move korle event kaj korbe</li>
+            <li>3. <span class="highlighted">'mouseout' -- ></span> mouse button theke baire nile event kaj korbe</li>
+            <li>4. <span class="highlighted">'mouseover' -- ></span> eta o onekta mouseenter er moto.</li>
+            <li>5. <span class="highlighted">'focus' -- ></span> click korle oi jayga ta focus hoy</li>
+        </ul>
+
+        <!-- type events -->
+        <h3>Type er khetre normally 3 ta event hoy : </h3>
+        <ul>
+            <li>1. <span class="highlighted">'keydown' -- ></span> key ta down hole kaj korbe (ja type korbe tar theke ekta key kom store hobe)</li>
+            <li>2. <span class="highlighted">'keypress' -- ></span> eta o keydown er motoi kaj korbe</li>
+            <li>3. <span class="highlighted">'keyup' -- ></span> key ta upore utha matroi kaj korbe (ja type korbe tai store hobe) ejono amra etai use korbo sobsomoy.</li>
+        </ul>
+
+        <!-- DEleete -->
+        <h3>button e click korle info ta delete hoye jabe : </h3>
+        <h3>Steps -- > </h3>
+        <ul>
+            <li>1. get the input field & add 'EventListener'. <br>   <span class="highlighted">ex : document.getElementById('delete-confirm').addEventListener('keyup',function(event){})</span></li>
+            <li>2. store the button in a variable. <br>   <span class="highlighted">ex : const deleteButton = document.getElementById('btn-delete');</span></li>
+            <li>3. Store the value of parameter in a variable<br><span class="highlighted">ex : const text = event.target.value;</span></li>
+            <li>4. If the typed text is equal to the targeted text then remove disable from the button <br><span class="highlighted">ex : if(text === 'delete') <br>{
+                deleteButton.removeAttribute('disabled');
+            } <br>
+            else <br>{
+                deleteButton.setAttribute('disabled', true);
+            } </span></li>
+        </ul>
+
+    </section>
+
+    <button id="btn-more">Mouseover</button>
+    <input id="text-field" type="text" placeholder="focus">
+    <input id="text-field2" type="text" placeholder="keydown">
+    <input id="text-field3" type="text" placeholder="keypress">
+    <input id="text-field4" type="text" placeholder="keyup">
+
+    <script>
+        document.getElementById('btn-more').addEventListener('mouseover', function(){
+            console.log('Event Triggerd')
+        });
+
+        document.getElementById('text-field').addEventListener('focus', function(){
+            console.log('Event triggerd inside the input field');
+        })
+
+        document.getElementById('text-field2').addEventListener('keydown', function(event){
+            console.log(event.target.value);
+        })
+
+        document.getElementById('text-field3').addEventListener('keypress', function(event){
+            console.log(event.target.value);
+        })
+
+        document.getElementById('text-field4').addEventListener('keyup', function(event){
+            console.log(event.target.value);
+        })
+    </script>
+<!-- delete info -->
+    <br>
+    <h2 id="delete-info">Delete info :</h2>
+    <input id="delete-confirm" type="text" placeholder="type the word 'delete'">
+    <button id="btn-delete" disabled>Delete</button>
+
+    <script>
+        document.getElementById('delete-confirm').addEventListener('keyup',function(event){
+            const deleteButton = document.getElementById('btn-delete');
+            const text = event.target.value;
+            if(text === 'delete'){
+                deleteButton.removeAttribute('disabled');
+            }
+            else{
+                deleteButton.setAttribute('disabled', true);
+            }
+
+        })
+        document.getElementById('btn-delete').addEventListener('click', function(){
+           document.getElementById('delete-info').style.display = 'none';
+        })
+    </script>
+
+<!-- Module: 25-7  -->
+
+    <h2 class="headline">Module : 25-7</h2>
 
 <script src="js/event.js"></script>
 
