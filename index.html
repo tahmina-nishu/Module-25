@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dom events</title>
+    <style>
+        .highlighted{
+            font-size: 16px;
+            color:crimson;
+        }
+    </style>
 </head>
 <body>
+    <h2 style="background-color: rgb(12, 152, 12); padding: 5px; text-align: center;">Module : 25-1 to 25-3</h2>
 
     <section class="add_event">
-        <h3>Button e onclick event add korar way 3 ta</h3>
+        <h3>Button e onclick event add korar way 4 ta</h3>
         <ul>
             <li>1. onclick = "console.log('text set kore')" </li>
             <li>2. onclick = "alada function create kore function ta call kore"</li>
@@ -61,9 +68,10 @@
 <section class="add_event">
     <!-- ** add event listener ** -->
     <h3>Event Listener : </h3>
-    <p><span>'onclick'</span> use korle sudhumatro click korle event kaj korbe r <span>'addEventListener'</span> diye j kono event add kora jay.</p>
-    <p>er jonno ekta variable e rekhe <span>"variable.addEventListener('event type', function name)"</span> syntax use korte hobe.</p>
+    <p><span class="red-text">'onclick'</span> use korle sudhumatro click korle event kaj korbe r <span class="red-text">'addEventListener'</span> diye j kono event add kora jay.</p>
+    <p>er jonno ekta variable e rekhe <span class="red-text">"variable.addEventListener('event type', function name)"</span> syntax use korte hobe.</p>
 </section>
+
     <button id="LightCoral">Click Me <br> & <br> make LightCoral</button>    <!-- click korle background LightCoral hobe -->
     <script>
         const LightCoralButton = document.getElementById('LightCoral');
@@ -95,6 +103,40 @@
     })
     </script>
 
-    <script src="js/event.js"></script>
+    <!-- Module: 25-4  -->
+
+    <h2 style="background-color: rgb(12, 152, 12); padding: 5px; text-align: center;">Module : 25-4</h2>
+    <section class="add_event">
+        <h3>input field e kichu likhar por update korle <span class="red-text">Default Input text</span> er jaygay oi likha ta asbe r input field ta khali hoye jabe</h3>
+        <h3>Steps -- > </h3>
+        <ul>
+            <li>1. get the element. </li>
+            <li>2. store the value of input field in a variable . <br>   <span class="highlighted">ex : const inputText = inputField.value;</span></li>
+            <li>3. get the text which will be changed <br><span class="highlighted">ex : const p = document.getElementById('input-text');</span></li>
+            <li>4. Set the changed text <br><span class="highlighted">ex : p.innerText = inputText;</span></li>
+            <li>5. Set the input field blank <br><span class="highlighted">ex : inputField.value = '';</span></li>
+        </ul>
+    </section>
+    
+    <h2>DOM Event handler : </h2>
+    <h3>Default text</h3>
+    <p id="input-text">Default Input text</p>
+    <input id="input-field" type="text">
+    <button id="btn-update">Update</button>
+
+    <script>
+        document.getElementById('btn-update').addEventListener('click', function(){
+            const inputField = document.getElementById('input-field');
+            console.log(inputField.value);  //ekhane inputField.text likhle inner text asbe na. er jonno value dite hobe
+
+            const inputText = inputField.value;
+            const p = document.getElementById('input-text');
+            p.innerText = inputText;
+            inputField.value = '';
+        })
+    </script>
+
+<script src="js/event.js"></script>
+
 </body>
 </html>

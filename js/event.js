@@ -18,7 +18,7 @@ for(butn of butns)
     butn.style.fontSize = "14px";
 }
 
-const spans = document.querySelectorAll('span');
+const spans = document.getElementsByClassName('red-text');
 for(span of spans)
 {
     span.style.fontSize = '18px';
